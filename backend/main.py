@@ -43,7 +43,7 @@ def health():
 def ask(body: Question):
     if not body.question.strip():
         raise HTTPException(status_code=400, detail="Tha's asked nowt. Ask summat.")
-    if not ANTHROPIC_API_KEY:
+    if not GROQ_API_KEY:
         raise HTTPException(status_code=500, detail="No API key set — check thy .env file, lad.")
     try:
         response = ask_thorpie(body.question.strip())
