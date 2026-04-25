@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thorpie — Ask a Yorkshireman</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge-row">
+        <span class="badge badge-purple">Est. in't Dales</span>
+        <span class="badge badge-teal">100% Yorkshire</span>
+      </div>
+      <h1>Thorpie</h1>
+      <p class="tagline">The ignorant oracle of t'North. Ask him owt. Regret it immediately.</p>
+    </header>
+
+    <main>
+      <div class="input-section">
+        <label for="question">Tha's question, like:</label>
+        <div class="input-row">
+          <input
+            type="text"
+            id="question"
+            placeholder="Ask Thorpie summat..."
+            autocomplete="off"
+            spellcheck="false"
+          />
+          <button id="micBtn" class="mic-btn" title="Speak thy question" aria-label="Record question">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+              <line x1="12" y1="19" x2="12" y2="23"/>
+              <line x1="8" y1="23" x2="16" y2="23"/>
+            </svg>
+          </button>
+        </div>
+        <button id="askBtn" class="ask-btn">Ask Thorpie</button>
+      </div>
+
+      <div id="answerSection" class="answer-section hidden">
+        <div class="answer-header">
+          <span class="answer-label">Thorpie says:</span>
+          <div class="voice-controls">
+            <button id="speakBtn" class="speak-btn" title="Hear Thorpie's wisdom">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+                <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+              </svg>
+              Hear it
+            </button>
+            <button id="stopBtn" class="stop-btn hidden" title="Shurrup Thorpie">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="6" width="12" height="12"/>
+              </svg>
+              Shurrup
+            </button>
+          </div>
+        </div>
+        <div id="answerBox" class="answer-box"></div>
+      </div>
+
+      <div id="voiceSettings" class="voice-settings hidden">
+        <div class="settings-row">
+          <div class="setting">
+            <label for="voiceSelect">Voice</label>
+            <select id="voiceSelect"></select>
+          </div>
+          <div class="setting">
+            <label for="speedSlider">Speed <span id="speedVal">0.85</span>x</label>
+            <input type="range" id="speedSlider" min="0.5" max="1.5" step="0.05" value="0.85" />
+          </div>
+          <div class="setting">
+            <label for="pitchSlider">Pitch <span id="pitchVal">0.8</span></label>
+            <input type="range" id="pitchSlider" min="0.5" max="1.5" step="0.05" value="0.8" />
+          </div>
+        </div>
+      </div>
+
+      <div id="errorBox" class="error-box hidden"></div>
+      <div id="loadingBox" class="loading-box hidden">
+        <span class="loading-text">Thorpie's thinkin'... (this might tek a while, he's not fast)</span>
+        <div class="dots"><span></span><span></span><span></span></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Powered by proper Yorkshire stubbornness &amp; a Claude API key.</p>
+      <p class="small">Voice features require a modern browser wi' Web Speech API support.</p>
+    </footer>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
