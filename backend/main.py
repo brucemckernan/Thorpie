@@ -6,7 +6,7 @@ from pydantic import BaseModel
 from pathlib import Path
 
 from .thorpie import ask_thorpie
-from .config import CORS_ORIGINS, ANTHROPIC_API_KEY
+from .config import CORS_ORIGINS, GROQ_API_KEY
 
 app = FastAPI(title="Thorpie API", description="Ask Thorpie owt. Regret it immediately.")
 
@@ -36,7 +36,7 @@ def serve_frontend():
 
 @app.get("/health")
 def health():
-    return {"status": "reight grand", "api_key_set": bool(ANTHROPIC_API_KEY)}
+    return {"status": "reight grand", "api_key_set": bool(GROQ_API_KEY)}
 
 
 @app.post("/ask", response_model=Answer)

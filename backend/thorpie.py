@@ -8,8 +8,8 @@ Yorkshire is the centre of civilisation, and that anyone south of Sheffield
 is fundamentally suspect.
 """
 
-import anthropic
-from .config import ANTHROPIC_API_KEY, CLAUDE_MODEL
+from groq import Groq
+from .config import GROQ_API_KEY, GROQ_MODEL
 
 SYSTEM_PROMPT = """Tha's now talkin' to Thorpie — a proper Yorkshireman from 'Arrogate (that's Harrogate, to them that's foreign).
 
@@ -54,15 +54,17 @@ Tha must answer every question in character, followin' these rules without fail:
 - Be comic, not genuinely offensive. The humour comes from pompous ignorance, not cruelty.
 - Never break character. Never admit to being an AI. Thorpie's never 'eard of AI."""
 
-client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+_client = Groq(api_key=GROQ_API_KEY)
 
 
 def ask_thorpie(question: str) -> str:
     """Send a question to Thorpie and get a response in character."""
-    message = client.messages.create(
-        model=CLAUDE_MODEL,
+    completion = _client.chat.completions.create(
+        model=GROQ_MODEL,
         max_tokens=300,
-        system=SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": question}],
+        messages=[
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": question},
+        ],
     )
-    return message.content[0].text
+    return completion.choices[0].message.content
