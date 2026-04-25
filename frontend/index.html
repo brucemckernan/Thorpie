@@ -7,12 +7,110 @@
   <link rel="stylesheet" href="/static/styles.css" />
 </head>
 <body>
+  <div class="yorkshire-stripe"></div>
   <div class="container">
     <header>
       <div class="badge-row">
-        <span class="badge badge-purple">Est. in't Dales</span>
-        <span class="badge badge-teal">100% Yorkshire</span>
+        <span class="badge badge-gold">Est. in't Dales</span>
+        <span class="badge badge-blue">100% Yorkshire</span>
       </div>
+
+      <!-- Thorpie character illustration -->
+      <div class="avatar-frame">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210" class="thorpie-svg" aria-label="Thorpie, a grumpy Yorkshireman in a flat cap">
+          <defs>
+            <clipPath id="avatar-clip">
+              <circle cx="100" cy="105" r="96"/>
+            </clipPath>
+          </defs>
+
+          <!-- Background -->
+          <circle cx="100" cy="105" r="100" fill="#1B3D6E"/>
+
+          <!-- Shoulders / shirt -->
+          <rect x="15" y="170" width="170" height="45" rx="0" fill="#FFFFFF" clip-path="url(#avatar-clip)"/>
+          <!-- V-neck -->
+          <path d="M 78 170 L 100 195 L 122 170" fill="#1B3D6E" clip-path="url(#avatar-clip)"/>
+          <!-- Tattoo text on right arm/chest area -->
+          <text x="148" y="192" font-family="Georgia, serif" font-size="9" font-weight="bold"
+                fill="#1B3D6E" text-anchor="middle" transform="rotate(-5,148,192)" clip-path="url(#avatar-clip)">MUM</text>
+          <!-- Anchor tattoo on left arm -->
+          <text x="52" y="190" font-family="serif" font-size="13" fill="#1B3D6E" text-anchor="middle" clip-path="url(#avatar-clip)">⚓</text>
+
+          <!-- Neck -->
+          <rect x="83" y="140" width="34" height="34" rx="6" fill="#D4916A"/>
+
+          <!-- Head -->
+          <ellipse cx="100" cy="98" rx="58" ry="60" fill="#D4916A" stroke="#1a1a1a" stroke-width="2.5"/>
+
+          <!-- Ears -->
+          <ellipse cx="44" cy="98" rx="11" ry="15" fill="#D4916A" stroke="#1a1a1a" stroke-width="2"/>
+          <ellipse cx="156" cy="98" rx="11" ry="15" fill="#D4916A" stroke="#1a1a1a" stroke-width="2"/>
+          <ellipse cx="44" cy="98" rx="5" ry="8" fill="#BD7450"/>
+          <ellipse cx="156" cy="98" rx="5" ry="8" fill="#BD7450"/>
+
+          <!-- Flat cap dome -->
+          <path d="M 42 68 Q 42 25 100 22 Q 158 25 158 68 Z" fill="#3A2718" stroke="#1a1a1a" stroke-width="2"/>
+          <!-- Cap fill down to head -->
+          <rect x="42" y="52" width="116" height="20" fill="#3A2718"/>
+          <!-- Cap brim (peak) -->
+          <path d="M 38 68 Q 35 80 52 84 L 155 82 Q 170 80 165 68" fill="#2A1808" stroke="#1a1a1a" stroke-width="2"/>
+          <!-- Cap button on top -->
+          <circle cx="100" cy="26" r="5" fill="#2A1808" stroke="#1a1a1a" stroke-width="1.5"/>
+          <!-- Cap band -->
+          <rect x="42" y="62" width="116" height="8" fill="#2A1808"/>
+
+          <!-- Sideburns -->
+          <rect x="44" y="66" width="16" height="30" rx="5" fill="#2A1808"/>
+          <rect x="140" y="66" width="16" height="30" rx="5" fill="#2A1808"/>
+
+          <!-- Eyebrows — thick, furrowed inward -->
+          <path d="M 62 78 Q 78 69 92 74" stroke="#1a1a1a" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <path d="M 108 74 Q 122 69 138 78" stroke="#1a1a1a" stroke-width="6" fill="none" stroke-linecap="round"/>
+          <!-- Brow furrow lines -->
+          <line x1="94" y1="72" x2="93" y2="82" stroke="#BD7450" stroke-width="2.5"/>
+          <line x1="106" y1="72" x2="107" y2="82" stroke="#BD7450" stroke-width="2.5"/>
+
+          <!-- Eyes — squinting, suspicious -->
+          <ellipse cx="79" cy="91" rx="12" ry="9" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+          <ellipse cx="121" cy="91" rx="12" ry="9" fill="white" stroke="#1a1a1a" stroke-width="2"/>
+          <!-- Pupils (looking sideways) -->
+          <circle cx="76" cy="91" r="7" fill="#1a1a1a"/>
+          <circle cx="118" cy="91" r="7" fill="#1a1a1a"/>
+          <!-- Eye glints -->
+          <circle cx="73" cy="89" r="2.5" fill="white"/>
+          <circle cx="115" cy="89" r="2.5" fill="white"/>
+          <!-- Squint lid lines -->
+          <path d="M 67 87 Q 79 83 91 87" stroke="#1a1a1a" stroke-width="2" fill="none"/>
+          <path d="M 109 87 Q 121 83 133 87" stroke="#1a1a1a" stroke-width="2" fill="none"/>
+
+          <!-- Nose (big, bulbous — comedy) -->
+          <ellipse cx="100" cy="109" rx="14" ry="12" fill="#BD7450" stroke="#1a1a1a" stroke-width="2"/>
+          <circle cx="94" cy="114" r="5" fill="#A86040"/>
+          <circle cx="106" cy="114" r="5" fill="#A86040"/>
+
+          <!-- Mouth — deep frown / sneer -->
+          <path d="M 78 130 Q 100 122 122 130" stroke="#1a1a1a" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <!-- Cheek lines (jowly) -->
+          <path d="M 62 110 Q 58 125 68 132" stroke="#BD7450" stroke-width="2" fill="none"/>
+          <path d="M 138 110 Q 142 125 132 132" stroke="#BD7450" stroke-width="2" fill="none"/>
+
+          <!-- Stubble dots -->
+          <circle cx="80" cy="126" r="2.5" fill="#3A2010" opacity="0.55"/>
+          <circle cx="91" cy="133" r="2.5" fill="#3A2010" opacity="0.55"/>
+          <circle cx="100" cy="136" r="2.5" fill="#3A2010" opacity="0.55"/>
+          <circle cx="109" cy="133" r="2.5" fill="#3A2010" opacity="0.55"/>
+          <circle cx="120" cy="126" r="2.5" fill="#3A2010" opacity="0.55"/>
+          <circle cx="85" cy="137" r="2" fill="#3A2010" opacity="0.4"/>
+          <circle cx="115" cy="137" r="2" fill="#3A2010" opacity="0.4"/>
+          <circle cx="76" cy="120" r="2" fill="#3A2010" opacity="0.4"/>
+          <circle cx="124" cy="120" r="2" fill="#3A2010" opacity="0.4"/>
+
+          <!-- Gold ring border -->
+          <circle cx="100" cy="105" r="96" fill="none" stroke="#C8A02A" stroke-width="6"/>
+        </svg>
+      </div>
+
       <h1>Thorpie</h1>
       <p class="tagline">The ignorant oracle of t'North. Ask him owt. Regret it immediately.</p>
     </header>
@@ -88,7 +186,7 @@
     </main>
 
     <footer>
-      <p>Powered by proper Yorkshire stubbornness &amp; a Claude API key.</p>
+      <p>🌹 Powered by proper Yorkshire stubbornness &amp; nowt else 🌹</p>
       <p class="small">Voice features require a modern browser wi' Web Speech API support.</p>
     </footer>
   </div>

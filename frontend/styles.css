@@ -10,24 +10,24 @@
 }
 
 :root {
-  --bg: #f5f5f0;
-  --surface: #eeeee8;
-  --surface-hover: #e6e6df;
+  --bg: #F5EFD6;
+  --surface: #EDE5C2;
+  --surface-hover: #E4DBA8;
   --text: #1a1a1a;
-  --text-muted: #666;
-  --text-light: #999;
-  --border: #d4d4cc;
-  --purple: #534AB7;
-  --teal: #2a9d8f;
-  --orange-bg: #FAECE7;
-  --orange-text: #712B13;
-  --orange-border: #e8c4b8;
+  --text-muted: #6B5240;
+  --text-light: #9A8060;
+  --border: #D4C090;
+  --blue: #1B3D6E;
+  --gold: #C8A02A;
+  --orange-bg: #FFF3E0;
+  --orange-text: #7A4010;
+  --orange-border: #E8C880;
   --error-bg: #fff0f0;
   --error-text: #c0392b;
   --error-border: #f5c6c6;
   --radius: 8px;
   --radius-lg: 12px;
-  --shadow: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow: 0 2px 6px rgba(0,0,0,0.12);
 }
 
 body {
@@ -40,12 +40,40 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 40px 16px 60px;
+  padding: 0 16px 60px;
+}
+
+/* Yorkshire flag stripe at top */
+.yorkshire-stripe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--blue) 50%, var(--gold) 50%);
+  z-index: 100;
+}
+
+.container {
+  padding-top: 36px;
 }
 
 .container {
   width: 100%;
   max-width: 560px;
+}
+
+/* ---- Avatar ---- */
+.avatar-frame {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 16px;
+}
+
+.thorpie-svg {
+  width: 160px;
+  height: 168px;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
 }
 
 /* ---- Header ---- */
@@ -70,22 +98,25 @@ header {
   letter-spacing: 0.02em;
 }
 
-.badge-purple {
-  background: rgba(83, 74, 183, 0.12);
-  color: var(--purple);
+.badge-gold {
+  background: rgba(200, 160, 42, 0.18);
+  color: #7A5A00;
+  border: 1px solid rgba(200, 160, 42, 0.4);
 }
 
-.badge-teal {
-  background: rgba(42, 157, 143, 0.12);
-  color: var(--teal);
+.badge-blue {
+  background: rgba(27, 61, 110, 0.12);
+  color: var(--blue);
+  border: 1px solid rgba(27, 61, 110, 0.25);
 }
 
 h1 {
-  font-size: 42px;
+  font-size: 52px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--text);
-  margin-bottom: 8px;
+  color: var(--blue);
+  margin-bottom: 6px;
+  text-shadow: 2px 2px 0 rgba(200, 160, 42, 0.3);
 }
 
 .tagline {
@@ -128,7 +159,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  border-color: var(--purple);
+  border-color: var(--blue);
 }
 
 input[type="text"]::placeholder {
@@ -157,8 +188,8 @@ input[type="text"]::placeholder {
 
 .mic-btn:hover {
   background: var(--surface);
-  border-color: var(--purple);
-  color: var(--purple);
+  border-color: var(--blue);
+  color: var(--blue);
 }
 
 .mic-btn.recording {
@@ -175,16 +206,18 @@ input[type="text"]::placeholder {
 
 .ask-btn {
   width: 100%;
-  padding: 12px;
-  background: var(--text);
-  color: var(--bg);
+  padding: 13px;
+  background: var(--blue);
+  color: #F5EFD6;
   border: none;
   border-radius: var(--radius);
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
   font-family: inherit;
   cursor: pointer;
+  letter-spacing: 0.03em;
   transition: opacity 0.15s, background 0.15s;
+  box-shadow: 0 2px 0 #0D2040, 0 3px 8px rgba(27,61,110,0.3);
 }
 
 .ask-btn:hover {
@@ -328,7 +361,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: var(--purple);
+  background: var(--blue);
   cursor: pointer;
 }
 
